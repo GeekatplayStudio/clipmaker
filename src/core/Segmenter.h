@@ -11,10 +11,10 @@ std::vector<Candidate> heuristicCandidates(const std::vector<Transcript>& transc
 // Offline script + publishing copy built from the chosen candidates.
 Script heuristicScript(const std::vector<Candidate>& c, const std::vector<MediaInfo>& media,
                        const std::string& idea, const Settings& s);
-// Narrative text of the current candidate list (used when the AI gives none, and for display).
+// Narrative text of the current candidate list (used when the engine gives none, and for display).
 std::string describeScript(const std::vector<Candidate>& c, const std::vector<MediaInfo>& media);
 
-// Prompt text handed to the LLM (Anthropic / Ollama / OpenAI-compatible).
+// Prompt text handed to the language model (Claude API / Ollama / OpenAI-compatible).
 std::string buildSystemPrompt();
 std::string buildUserPrompt(const std::vector<Transcript>& transcripts, const std::vector<MediaInfo>& media,
                             const std::vector<std::string>& imageVisuals, const std::string& idea, const Settings& s);

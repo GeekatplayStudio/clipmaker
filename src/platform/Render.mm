@@ -159,7 +159,7 @@ static void buildCaptions(CALayer* overlay, const Project& p, const std::vector<
             addVisibility(l, clipStart, clipStart + std::min(3.0, c.duration())); addPop(l, clipStart);
             [overlay addSublayer:l]; [keepAlive addObject:(__bridge id)img]; CGImageRelease(img); CFRelease(hf);
         }
-        // Overlay text (AI-suggested, or the slide's caption): shown for the clip, styled like captions.
+        // Overlay text (planner-suggested, or the slide's caption): shown for the clip, styled like captions.
         if (!c.overlay.empty() || (c.isImage && !c.hook.empty() && ci != 0)) {
             NSString* txt = ns(c.overlay.empty() ? c.hook : c.overlay);
             CTFontRef of = CTFontCreateWithName((CFStringRef)ns(s.fontName), s.fontSize * 0.95, nullptr);

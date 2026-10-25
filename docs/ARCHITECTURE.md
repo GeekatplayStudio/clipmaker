@@ -1,5 +1,7 @@
 # Architecture
 
+*ClipMaker by Geekatplay Studio · Vladimir Chopine*
+
 ClipMaker is a single macOS app bundle with two layers:
 
 ```
@@ -19,7 +21,7 @@ src/platform    Objective-C++ — Apple frameworks behind a C++ interface (Platf
                 server fallback, word timings → sentences
   Vision.mm     face/saliency subject centre, piecewise subject tracking, VNClassifyImage frame labels,
                 frame dumper
-  AI.mm         NSURLSession JSON clients for Anthropic Messages, Ollama /api/chat, OpenAI chat
+  AI.mm         NSURLSession JSON clients for the Claude Messages API, Ollama /api/chat, OpenAI chat
                 completions; parses the edit plan JSON (clips, overlays, title, description, hashtags)
   Render.mm     AVMutableComposition (video + voice + music), per-clip transform ramps
                 (reframe pan, Ken Burns, slide motion), AVMutableAudioMix (gain, fade),

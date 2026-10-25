@@ -1,3 +1,4 @@
+// ClipMaker — Geekatplay Studio · Vladimir Chopine
 #import <Cocoa/Cocoa.h>
 #import "app/MainWindow.h"
 #include "platform/Platform.h"
@@ -66,9 +67,9 @@ static int runCLI(int argc, const char** argv) {
     for (size_t i = 0; i < media.size(); ++i) if (media[i].isImage) { visuals[i] = describeFrame(media[i].path, -1); printf("image S%zu shows: %s\n", i, visuals[i].c_str()); }
     std::vector<Candidate> cands; std::string aiErr; Script script;
     if (s.provider != Settings::Heuristic) {
-        prog(0, "Asking AI for best segments…");
+        prog(0, "Building the edit plan…");
         cands = aiSelectSegments(s, transcripts, media, visuals, idea, script, &aiErr);
-        if (cands.empty()) printf("AI failed (%s), falling back to heuristic\n", aiErr.c_str());
+        if (cands.empty()) printf("Engine failed (%s), falling back to offline ranking\n", aiErr.c_str());
     }
     if (cands.empty()) cands = heuristicCandidates(transcripts, media, idea, s);
     refineCandidates(cands, transcripts, media, s);

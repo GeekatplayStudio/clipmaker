@@ -209,7 +209,7 @@ void refineCandidates(std::vector<Candidate>& c, const std::vector<Transcript>& 
         for (auto& k : out) if (k.sourceIndex == cand.sourceIndex && cand.start < k.end && cand.end > k.start) { ov = true; break; }
         if (!ov) out.push_back(cand);
     }
-    // keep the AI's play order; only the offline ranker is unordered, and it already sorted by score
+    // keep the engine's play order; only the offline ranker is unordered, and it already sorted by score
     c = out;
 }
 

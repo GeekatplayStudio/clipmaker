@@ -1,3 +1,4 @@
+// ClipMaker — Geekatplay Studio · Vladimir Chopine
 #pragma once
 #include "core/Model.h"
 

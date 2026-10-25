@@ -1,3 +1,4 @@
+// ClipMaker — Geekatplay Studio · Vladimir Chopine
 #pragma once
 #include <string>
 #include <vector>
@@ -47,7 +48,7 @@ struct Candidate {
     double start = 0, end = 0;
     double score = 0;            // 0..100
     std::string hook, reason, text;
-    std::string overlay;         // on-screen text for this clip (images, or AI-suggested)
+    std::string overlay;         // on-screen text for this clip (images, or suggested by the planner)
     std::string visual;          // what the frames show (Vision classification labels)
     bool isImage = false;
     double cropCenterX = 0.5;    // normalized subject x at clip start (9:16 reframe)
@@ -64,7 +65,7 @@ inline double screenPosY(ScreenPos p) {   // fraction from bottom for the captio
                  case ScreenPos::Lower: return 0.30; default: return 0.14; }
 }
 
-// The AI's proposed edit + publishing copy, shown to the user for approval.
+// The proposed edit + publishing copy, shown to the user for approval.
 struct Script {
     std::string narrative;       // human-readable editing script
     std::string title, description;

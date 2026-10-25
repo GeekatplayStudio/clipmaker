@@ -38,7 +38,7 @@ static std::string callLLM(const Settings& s, const std::string& system, const s
     NSDictionary* j = nil;
     switch (s.provider) {
     case Settings::Anthropic: {
-        if (s.apiKey.empty()) { if (err) *err = "Anthropic API key missing"; return ""; }
+        if (s.apiKey.empty()) { if (err) *err = "Claude API key missing"; return ""; }
         if (model.empty()) model = "claude-sonnet-5-5";
         std::string base = s.baseURL.empty() ? "https://api.anthropic.com" : s.baseURL;
         j = httpJSON(ns(base + "/v1/messages"),

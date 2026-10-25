@@ -4,10 +4,10 @@
 
 # ClipMaker
 
-**AI shorts editor for macOS — compact, native, fast.**
+**Shorts editor for macOS by [Geekatplay Studio](https://www.geekatplay.com) — compact, native, fast.**
 Drop long videos (and photos), describe the short you want, and ClipMaker
-transcribes on-device, lets an AI pick and order the best moments, shows you
-the edit plan for approval, and renders a 9:16 short with subject-tracking
+transcribes on-device, has a language model pick and order the best moments,
+shows you the edit plan for approval, and renders a 9:16 short with subject-tracking
 reframe, beat-synced cuts, animated captions, music and ready-to-paste
 title/description/hashtags.
 
@@ -18,10 +18,10 @@ No ffmpeg, no Electron, no third-party libraries. ~400 KB binary.
 
 ## How it works
 
-| 1 · Add media & describe the short | 2 · Analyze → review the AI's edit plan |
+| 1 · Add media & describe the short | 2 · Analyze → review the edit plan |
 |---|---|
 | ![Sources](docs/img/02-sources-preview.png) | ![Edit plan](docs/img/03-edit-plan-script.png) |
-| Videos and images (slides with pan/zoom), a music track, your brief, the AI engine and output settings. Click any source to preview it. | Transcription (on-device, cached), frame descriptions, beat detection, then the AI proposes ordered moments with hooks, overlays and a rationale. |
+| Videos and images (slides with pan/zoom), a music track, your brief, the engine and output settings. Click any source to preview it. | Transcription (on-device, cached), frame descriptions, beat detection, then the engine proposes ordered moments with hooks, overlays and a rationale. |
 
 | 3 · Transcript, frames, publish copy | 4 · Generate |
 |---|---|
@@ -31,9 +31,9 @@ No ffmpeg, no Electron, no third-party libraries. ~400 KB binary.
 ## Features
 
 - **Transcript-driven selection** — on-device Speech with word timings; cuts snap to word boundaries.
-- **AI engines** — Anthropic Claude (`claude-sonnet-5-5`), local Ollama, any OpenAI-compatible endpoint, or an offline ranker (also the automatic fallback).
+- **Engines** — Claude API (`claude-sonnet-5-5`), local Ollama, any OpenAI-compatible endpoint, or an offline ranker (also the automatic fallback).
 - **Edit plan for approval** — rationale, ordered cut list, transcript with frame descriptions, generated title/description/hashtags. Approve, tweak, or re-run.
-- **Images as slides** — photos become pan-and-zoom slides placed by the AI where they support the narration, with short overlay text.
+- **Images as slides** — photos become pan-and-zoom slides placed where they support the narration, with short overlay text.
 - **Smart 9:16 reframe** — Vision faces/saliency tracked across each clip; smooth pan plus optional push-in.
 - **Beat sync** — tempo and phase detected from your music; the short starts on a downbeat and every cut lands on a beat; music ducked under voice with fade-out.
 - **Captions with effects** — Bold pop, Karaoke word highlight, Minimal pill, Outline; font, size, five vertical positions for captions and for the hook title.
@@ -58,7 +58,7 @@ newest SDK the installed linker can read; override with `-DCMAKE_OSX_SYSROOT=`.
 1. **Add media** (button, ⌘O, drag-and-drop) — videos and images. Click a row to preview.
 2. **Describe the short** — audience, tone, what to include, the call to action.
 3. **Music** (optional) — pick a track, set level, keep *Sync cuts to beats* on.
-4. **AI engine** — Claude (API key or `ANTHROPIC_API_KEY`), Ollama (`ollama serve` + model name), OpenAI-compatible, or offline.
+4. **Engine** — Claude API (key or `ANTHROPIC_API_KEY`), Ollama (`ollama serve` + model name), OpenAI-compatible, or offline.
 5. **Analyze** (⌘A) → the **Edit plan** sheet opens: read the script, check the transcript, edit the publish text.
 6. **Approve & Generate** → `~/Movies/ClipMaker/short-<date>.mp4` + `.txt`.
 
@@ -81,11 +81,15 @@ such a source, a 118 BPM test track, and finished shorts made from them.
 
 ```
 src/core       C++: model, transcript utils, beat detector, segmenter / planner
-src/platform   Objective-C++: media, speech, vision, AI clients, renderer
+src/platform   Objective-C++: media, speech, vision, model clients, renderer
 src/app        AppKit UI + CLI entry
 docs/          manual, architecture, screenshots, pipeline diagram
 samples/       test source, music, demo outputs
 ```
+
+## Author
+
+**Vladimir Chopine** — [Geekatplay Studio](https://www.geekatplay.com), 3D tutorials and digital art training.
 
 ## License
 
