@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" font-family="-apple-system, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a94a6"/></marker>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f2a44"/><stop offset="1" stop-color="#141a2b"/></linearGradient>
+  </defs>
+  <rect width="1100" height="420" rx="16" fill="url(#g)"/>
+  <text x="550" y="40" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">ClipMaker pipeline — long footage + photos + your idea → vertical short</text>
+
+  <!-- inputs -->
+  <g font-size="13" fill="#dfe6f2">
+    <rect x="30" y="80" width="170" height="56" rx="10" fill="#2b3a5c" stroke="#5b7bd5"/>
+    <text x="115" y="104" text-anchor="middle" font-weight="700">Videos</text><text x="115" y="124" text-anchor="middle" fill="#aab6cc">any length, any ratio</text>
+    <rect x="30" y="150" width="170" height="56" rx="10" fill="#2b3a5c" stroke="#5b7bd5"/>
+    <text x="115" y="174" text-anchor="middle" font-weight="700">Images</text><text x="115" y="194" text-anchor="middle" fill="#aab6cc">become pan/zoom slides</text>
+    <rect x="30" y="220" width="170" height="56" rx="10" fill="#2b3a5c" stroke="#5b7bd5"/>
+    <text x="115" y="244" text-anchor="middle" font-weight="700">Music</text><text x="115" y="264" text-anchor="middle" fill="#aab6cc">mp3 / wav / m4a</text>
+    <rect x="30" y="290" width="170" height="56" rx="10" fill="#3b2f5c" stroke="#9b7bd5"/>
+    <text x="115" y="314" text-anchor="middle" font-weight="700">Your idea</text><text x="115" y="334" text-anchor="middle" fill="#aab6cc">“the lighting mistake tip…”</text>
+  </g>
+
+  <!-- analysis -->
+  <g font-size="13" fill="#dfe6f2">
+    <rect x="270" y="80" width="200" height="56" rx="10" fill="#1e3d35" stroke="#3fbf9f"/>
+    <text x="370" y="104" text-anchor="middle" font-weight="700">Speech → transcript</text><text x="370" y="124" text-anchor="middle" fill="#aab6cc">on-device, word timings</text>
+    <rect x="270" y="150" width="200" height="56" rx="10" fill="#1e3d35" stroke="#3fbf9f"/>
+    <text x="370" y="174" text-anchor="middle" font-weight="700">Vision → what frames show</text><text x="370" y="194" text-anchor="middle" fill="#aab6cc">faces, saliency, labels</text>
+    <rect x="270" y="220" width="200" height="56" rx="10" fill="#1e3d35" stroke="#3fbf9f"/>
+    <text x="370" y="244" text-anchor="middle" font-weight="700">Beats → tempo + grid</text><text x="370" y="264" text-anchor="middle" fill="#aab6cc">spectral flux, autocorrelation</text>
+  </g>
+
+  <!-- AI -->
+  <rect x="540" y="80" width="220" height="196" rx="12" fill="#4a2f1e" stroke="#f0a35a" stroke-width="1.5"/>
+  <g font-size="13" fill="#ffe9d6" text-anchor="middle">
+    <text x="650" y="108" font-weight="700" font-size="15">AI editor</text>
+    <text x="650" y="130" fill="#f7c9a0">Claude API · Ollama · OpenAI-compatible</text>
+    <text x="650" y="148" fill="#f7c9a0">or offline ranking</text>
+    <text x="650" y="178">picks moments that fit the idea</text>
+    <text x="650" y="196">orders them, places slides</text>
+    <text x="650" y="214">writes hook titles + overlays</text>
+    <text x="650" y="232">title · description · hashtags</text>
+    <text x="650" y="262" fill="#ffd27a" font-weight="700">→ edit plan you approve</text>
+  </g>
+
+  <!-- render -->
+  <rect x="830" y="80" width="240" height="196" rx="12" fill="#1f3b55" stroke="#62b6ff" stroke-width="1.5"/>
+  <g font-size="13" fill="#dff0ff" text-anchor="middle">
+    <text x="950" y="108" font-weight="700" font-size="15">Render (AVFoundation)</text>
+    <text x="950" y="136">9:16 smart reframe follows subject</text>
+    <text x="950" y="156">cuts snapped to beats</text>
+    <text x="950" y="176">animated captions (4 styles)</text>
+    <text x="950" y="196">hook title · slide text</text>
+    <text x="950" y="216">music ducked under voice</text>
+    <text x="950" y="246" fill="#9fe0ff" font-weight="700">1080×1920 H.264 .mp4</text>
+    <text x="950" y="264" fill="#9fe0ff">+ .txt with publish copy</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#8a94a6" stroke-width="2" fill="none" marker-end="url(#a)">
+    <path d="M200,108 L268,108"/><path d="M200,178 L268,178"/><path d="M200,248 L268,248"/>
+    <path d="M200,318 C 300,318 300,200 538,200"/>
+    <path d="M470,108 L538,120"/><path d="M470,178 L538,178"/><path d="M470,248 C 500,248 500,300 790,300 C 810,300 810,178 828,178"/>
+    <path d="M760,178 L828,178"/>
+  </g>
+
+  <!-- footer -->
+  <g font-size="12" fill="#aab6cc">
+    <text x="550" y="385" text-anchor="middle">Native macOS · C++20 + Objective-C++ · no third-party dependencies · hardware decode/encode · ~400 KB binary</text>
+  </g>
+</svg>
